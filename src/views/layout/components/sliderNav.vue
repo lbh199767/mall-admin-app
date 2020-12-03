@@ -14,10 +14,10 @@
           </a-breadcrumb>
         </div>
         <ul class="user-info">
-          <li>欢迎libohao@qq.com
+          <li class="user-name">{{$store.state.user.username}}
             <a-icon type="down" />
           </li>
-          <li>退出</li>
+          <li class="login-out">退出</li>
         </ul>
       </div>
 </template>
