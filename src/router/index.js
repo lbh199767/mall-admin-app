@@ -15,6 +15,8 @@ const asyncRouterMap = [{
   name: 'Product',
   meta: {
     title: '商品',
+    hidden: false,
+    icon: 'shop',
   },
   component: Home,
   children: [{
@@ -22,6 +24,8 @@ const asyncRouterMap = [{
     name: 'ProductList',
     meta: {
       title: '商品列表',
+      hidden: false,
+      icon: 'unordered-list',
     },
     component: () => import('@/views/page/productList.vue'),
   }, {
@@ -29,6 +33,8 @@ const asyncRouterMap = [{
     name: 'ProductAdd',
     meta: {
       title: '添加商品',
+      hidden: false,
+      icon: 'plus-circle',
     },
     component: () => import('@/views/page/productAdd.vue'),
   }, {
@@ -36,6 +42,8 @@ const asyncRouterMap = [{
     name: 'Category',
     meta: {
       title: '类目管理',
+      hidden: false,
+      icon: 'setting',
     },
     component: () => import('@/views/page/category.vue'),
   }],
@@ -49,12 +57,16 @@ const routes = [
     component: Home,
     meta: {
       title: '首页',
+      hidden: false,
+      icon: 'home',
     },
     children: [{
       path: 'index',
       name: 'Index',
       meta: {
         title: '统计',
+        hidden: false,
+        icon: 'pie-chart',
       },
       component: () => import('../views/page/index.vue'),
     }],
@@ -65,6 +77,7 @@ const routes = [
     component: Login,
     meta: {
       title: '登录',
+      hidden: true,
     },
   },
 ];
