@@ -20,7 +20,7 @@
           allowClear
           @change="handleChange"
         >
-          <a-select-option v-for="c in categoryList" :key="c.id" :value="c.id">
+          <a-select-option v-for="c in data" :key="c.id" :value="c.id">
             {{ c.name }}
           </a-select-option>
         </a-select>
@@ -36,7 +36,6 @@
   </div>
 </template>
 <script>
-import api from '@/api/category';
 
 export default {
   data() {
@@ -45,13 +44,13 @@ export default {
         searchWord: '',
         category: '',
       },
-      categoryList: [],
     };
   },
+  props: ['data'],
   created() {
-    api.list().then((res) => {
-      this.categoryList = res.data;
-    });
+    // api.list().then((res) => {
+    //   console.log(res.data);
+    // });
   },
   methods: {
     // 表单提交触发
@@ -67,6 +66,6 @@ export default {
 </script>
 <style scoped>
   .search-box{
-    margin-left: 20px;
+    margin: 20px;
   }
 </style>
