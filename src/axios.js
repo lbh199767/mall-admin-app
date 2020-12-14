@@ -7,7 +7,7 @@ const instance = axios.create({
 
 // 请求拦截
 instance.interceptors.request.use((config) => {
-  console.log(config);
+  // console.log(config);
   if (config.url.includes('/passport')) {
     return config;
   }
@@ -22,7 +22,7 @@ instance.interceptors.request.use((config) => {
 
 // 响应拦截
 instance.interceptors.response.use((response) => {
-  console.log(response);
+  // console.log(response);
   if (response.data.status === 'fail') {
     return Promise.reject(response.data.msg);
   }

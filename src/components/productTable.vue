@@ -48,7 +48,6 @@ const columns = [
     title: '预售价格',
     dataIndex: 'price',
     key: 'price',
-    ellipsis: true,
   },
   {
     title: '折扣价格',
